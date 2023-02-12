@@ -29,4 +29,4 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
     - name: Test redirection
-      run: python run.py
+      run: python run.py > logs.txt 2> err.txt
