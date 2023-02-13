@@ -13,5 +13,6 @@ jobs:
     - id: logsData
       continue-on-error: true
       run: |
-       nohup node node-app/src/app.js &> logs.txt
-       cat logs.txt
+       nohup node app.js &> logs.txt
+    - name: output log file
+      run: cat logs.txt
