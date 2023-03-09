@@ -1,0 +1,27 @@
+default:
+  image:
+    name: python:latest
+    entrypoint: [""]
+
+  before_script:
+    - python -m pip install --upgrade pip
+  
+stages:
+  - test_1
+
+
+variables:
+  OUTPUTFILE: 'testoutput.txt'
+
+
+test_multiline_script_block:
+  stage: test_1
+  image:
+    name: python:latest
+  script:
+    - |
+      d = {'A':123, 'B':456, 'C':789, 'D':222}
+
+      for key, value in d.items():
+      
+          print(f'{key} {value}')
